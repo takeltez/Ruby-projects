@@ -1,4 +1,6 @@
-require './lib/main'
+require 'converter'
+require 'reader'
+require 'adapter'
 
 RSpec.describe Adapter do
   describe '#Converts' do

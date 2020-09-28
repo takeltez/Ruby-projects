@@ -1,4 +1,6 @@
-require './lib/main'
+require 'csv'
+require './lib/reader'
+require './lib/stats_analyzer'
 
 RSpec.describe StatsAnalyzer do
   describe '#Analyzer' do
