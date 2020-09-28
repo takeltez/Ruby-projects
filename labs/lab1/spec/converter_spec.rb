@@ -2,18 +2,6 @@ require './lib/converter'
 
 RSpec.describe Converter do
   describe '#Converts' do
-    # it 'convert' do
-    #   expect(Converter.new.convert(432.23, 'C', 'K')).to eq [705.23, 'K']
-    # end
-    # it 'from_c' do
-    #   expect(Converter.new.from_c(432.23, 'C', 'K')).to eq [705.23, 'K']
-    # end
-    # it 'from_k' do
-    #   expect(Converter.new.from_k(432.23, 'K', 'C')).to eq [159.23, 'C']
-    # end
-    # it 'from_f' do
-    #   expect(Converter.new.from_f(432.23, 'F', 'C')).to eq [222.35, 'C']
-    # end
     it 'from_c_to_k' do
       expect(Converter.new.convert(432.23, 'C', 'K')).to eq [705.23, 'K']
     end
