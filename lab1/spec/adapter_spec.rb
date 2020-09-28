@@ -1,4 +1,4 @@
-require './lib/c_k_f_converter'
+require './lib/main'
 
 RSpec.describe Adapter do
   describe '#Converts' do

@@ -1,4 +1,4 @@
-require './lib/stats_analyzer'
+require './lib/main'
 
 RSpec.describe StatsAnalyzer do
   describe '#Analyzer' do
