@@ -62,32 +62,56 @@ class Adapter < Convertor
     when 'C'
       [@reader.temperature.round(2), @reader.out_degree_type]
     when 'K'
-      [(@reader.temperature + 273).round(2), @reader.out_degree_type]
+      from_c_to_k
     when 'F'
-      [(@reader.temperature * 1.8 + 32).round(2), @reader.out_degree_type]
+      from_c_to_f
     end
   end
 
   def from_k
     case @reader.out_degree_type
     when 'C'
-      [(@reader.temperature - 273).round(2), @reader.out_degree_type]
+      from_k_to_c
     when 'K'
       [@reader.temperature.round(2), @reader.out_degree_type]
     when 'F'
-      [(@reader.temperature * 1.8 - 459).round(2), @reader.out_degree_type]
+      from_k_to_f
     end
   end
 
   def from_f
     case @reader.out_degree_type
     when 'C'
-      [((@reader.temperature - 32) / 1.8).round(2), @reader.out_degree_type]
+      from_f_to_c
     when 'K'
-      [((@reader.temperature + 459) / 1.8).round(2), @reader.out_degree_type]
+      from_f_to_k
     when 'F'
       [@reader.temperature.round(2), @reader.out_degree_type]
     end
+  end
+
+  def from_c_to_k
+    [(@reader.temperature + 273).round(2), @reader.out_degree_type]
+  end
+
+  def from_c_to_f
+    [(@reader.temperature * 1.8 + 32).round(2), @reader.out_degree_type]
+  end
+
+  def from_k_to_c
+    [(@reader.temperature - 273).round(2), @reader.out_degree_type]
+  end
+
+  def from_k_to_f
+    [(@reader.temperature * 1.8 - 459).round(2), @reader.out_degree_type]
+  end
+
+  def from_f_to_c
+    [((@reader.temperature - 32) / 1.8).round(2), @reader.out_degree_type]
+  end
+
+  def from_f_to_k
+    [((@reader.temperature + 459) / 1.8).round(2), @reader.out_degree_type]
   end
 end
 
