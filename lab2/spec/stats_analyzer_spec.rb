@@ -1,4 +1,4 @@
-require './lib/hello_world'
+require './lib/stats_analyzer'
 
 RSpec.describe HelloWorld do
   describe '#hello' do
