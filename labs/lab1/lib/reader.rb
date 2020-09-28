@@ -13,12 +13,10 @@ class Reader
   end
 
   def check_temperature
-    if @temperature[/[a-zA-Z_]/]
-      puts("\nTemperature must be a numeric value: #{@temperature}")
-      exit
-    else
-      @temperature = @temperature.to_f
-    end
+    return unless @temperature[/[a-zA-Z_]/]
+
+    puts("\nTemperature must be a numeric value: #{@temperature}")
+    exit
   end
 
   def check_in_degree_type
