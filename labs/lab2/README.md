@@ -23,5 +23,5 @@ ruby lib/stats_analyzer.rb
 
 ### тесты и rubocop запускаются из папки lab2/
 
-rspec - run tests
+rspec - run tests<br>
 rubocop -a - run rubocop
