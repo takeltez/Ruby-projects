@@ -8,5 +8,5 @@ ruby lib/c_k_f_converter.rb
 
 ### Тесты и rubocop запускаются из папки lab1/
 
-rspec - run tests
+rspec - run tests<br>
 rubocop -a - run rubocop
