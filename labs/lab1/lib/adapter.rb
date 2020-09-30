@@ -5,18 +5,22 @@ class Adapter < Converter
   def start
     reader = Reader.new
 
-    reader.read
+    loop do
+      reader.read
 
-    tempr = reader.temperature
-    in_sclale = reader.in_degree_type
-    out_scale = reader.out_degree_type
+      if reader.check_temperature == false
+        puts("\nTemperature must be numeric value!\n\n")
+        next
+      end
 
-    reader.check_temperature
-    reader.check_in_degree_type
-    reader.check_out_degree_type
+      if reader.check_in_degree_type == false || reader.check_out_degree_type == false
+        puts("\nIncorrect scale!\n\n")
+        next
+      end
 
-    degree = convert(tempr, in_sclale, out_scale)
+      degree = convert(reader.temperature, reader.in_degree_type, reader.out_degree_type)
 
-    puts("\nTemperature (#{degree[1]}): #{degree[0]}")
+      puts("\nTemperature (#{degree[1]}): #{degree[0]}\n\n")
+    end
   end
 end

@@ -2,7 +2,13 @@ class Reader
   attr_accessor :temperature, :in_degree_type, :out_degree_type
 
   def read
-    print('Enter temperature: ')
+    print('Enter \'exit\' for stop or any key for continue: ')
+
+    stop = gets.chomp
+
+    exit if stop == 'exit'
+
+    print("\nEnter temperature: ")
     @temperature = gets.chomp
 
     print('Enter incoming degree type (C, K, F): ')
@@ -15,21 +21,18 @@ class Reader
   def check_temperature
     return unless @temperature[/[a-zA-Z_]/]
 
-    puts("\nTemperature must be a numeric value: #{@temperature}")
-    exit
+    false
   end
 
   def check_in_degree_type
     return unless (@in_degree_type != 'C') && (@in_degree_type != 'K') && (@in_degree_type != 'F')
 
-    puts("\nIncorrect degree type: #{@in_degree_type}")
-    exit
+    false
   end
 
   def check_out_degree_type
     return unless (@out_degree_type != 'C') && (@out_degree_type != 'K') && (@out_degree_type != 'F')
 
-    puts("\nIncorrect degree type: #{@out_degree_type}")
-    exit
+    false
   end
 end
