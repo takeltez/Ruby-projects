@@ -8,6 +8,7 @@ class StatsAnalyzer
   end
 
   def find_region_index(region)
+    @reg_index = -1
     (1...@reader.n).each do |i|
       if @reader.csv_array[i][0] == region
         @reg_index = i
@@ -17,11 +18,11 @@ class StatsAnalyzer
 
     return unless @reg_index == -1
 
-    puts('Region not found!')
-    exit
+    false
   end
 
   def find_year_index(year)
+    @year_index = -1
     (2...@reader.m).each do |j|
       if @reader.csv_array[0][j] == year
         @year_index = j
@@ -31,8 +32,7 @@ class StatsAnalyzer
 
     return unless @year_index == -1
 
-    puts('Year not found!')
-    exit
+    false
   end
 
   def find_max_per_region
