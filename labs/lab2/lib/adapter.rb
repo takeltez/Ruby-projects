@@ -20,7 +20,7 @@ class Adapter
 
         @region = gets.chomp
 
-        next if check == false
+        next if check_region == false
 
         calling_methods
 
@@ -39,7 +39,7 @@ class Adapter
     puts("\nMax: #{max_per_reg}\nMin: #{min_per_reg}\nX_avr: #{avr_val_per_reg}\nS^2: #{c_s_var_per_reg}\n\n")
   end
 
-  def check
+  def check_region
     if @stats_analyzer.find_region_index(@region).nil?
       puts("Region not found!\n\n")
       false
