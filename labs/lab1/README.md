@@ -1,12 +1,14 @@
 # С-F-K-Converter
 
-## Запуск и тесты
+## Run program
 
-### Запуск производится из папки lab1/
+### From lab1/ directory
 
-ruby lib/c_k_f_converter.rb
+ruby lib/main.rb
 
-### Тесты и rubocop запускаются из папки lab1/
+## Run tests and rubocop
+
+### From lab1/ directory
 
 rspec - run tests<br>
 rubocop -a - run rubocop

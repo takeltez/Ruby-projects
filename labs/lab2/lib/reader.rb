@@ -7,13 +7,4 @@ class Reader
     @n = csv_array.length
     @m = csv_array[0].length
   end
-
-  def print_csv
-    (0...@n).each do |i|
-      (0...@m).each do |j|
-        print("#{@csv_array[i][j]},")
-      end
-      puts("\n")
-    end
-  end
 end

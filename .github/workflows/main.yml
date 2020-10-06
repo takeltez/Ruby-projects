@@ -20,6 +20,6 @@ jobs:
       - name: RSpec lab1
         run: cd labs/lab1/ && bundle exec rspec
       - name: Rubocop lab2
-        run: cd labs/lab2/ && bundle exec rspec
+        run: cd labs/lab2/ && bundle exec rubocop
       - name: RSpec lab2
         run: cd labs/lab2/ && bundle exec rspec
