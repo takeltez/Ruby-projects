@@ -1,10 +1,15 @@
 class Reader
-  attr_accessor :csv_array, :n, :m
+  attr_accessor :data_array, :n, :m, :regions
 
   def initialize
-    @csv_array = CSV.read('lib/res/internet_using.csv')
+    @data_array = CSV.read('lib/res/internet_using.csv')
 
-    @n = csv_array.length
-    @m = csv_array[0].length
+    @n = @data_array.length
+    @m = @data_array[0].length
+
+    @regions = []
+    (1...@n).each do |i|
+      @regions[i] = (@data_array[i][0])
+    end
   end
 end
