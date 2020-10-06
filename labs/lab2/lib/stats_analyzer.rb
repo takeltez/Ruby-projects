@@ -8,9 +8,6 @@ class StatsAnalyzer
 
   def find_region_index(region)
     @reg_index = @reader.regions.rindex(region)
-
-    puts("Region not found!\n\n") if @reg_index.nil?
-
     @reg_index
   end
 

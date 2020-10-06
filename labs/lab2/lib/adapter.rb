@@ -18,9 +18,9 @@ class Adapter
       when 'start'
         print('Choose region of RF: ')
 
-        region = gets.chomp
+        @region = gets.chomp
 
-        next if @stats_analyzer.find_region_index(region).nil?
+        next if check == false
 
         calling_methods
 
@@ -37,5 +37,14 @@ class Adapter
     c_s_var_per_reg = @stats_analyzer.c_s_v_per_region(avr_val_per_reg)
 
     puts("\nMax: #{max_per_reg}\nMin: #{min_per_reg}\nX_avr: #{avr_val_per_reg}\nS^2: #{c_s_var_per_reg}\n\n")
+  end
+
+  def check
+    if @stats_analyzer.find_region_index(@region).nil?
+      puts("Region not found!\n\n")
+      false
+    else
+      true
+    end
   end
 end
